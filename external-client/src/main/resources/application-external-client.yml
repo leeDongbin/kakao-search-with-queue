@@ -1,0 +1,28 @@
+---
+spring:
+  config:
+    activate:
+      on-profile: local, test, beta
+search:
+  kakao-search-client:
+    author-name: Authorization
+    author-value: KakaoAK 10cd33901149cfa00ef675d3372a74f3
+    root-uri: https://dapi.kakao.com
+    find-blog-uri-path: /v2/search/blog
+    connect-timeout: 2000
+    read-timeout: 5000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+search:
+  kakao-search-client:
+    author-name: Authorization
+    author-value: KakaoAK 10cd33901149cfa00ef675d3372a74f3
+    root-uri: https://dapi.kakao.com
+    find-blog-uri-path: /v2/search/blog
+    connect-timeout: 2000
+    read-timeout: 5000
+

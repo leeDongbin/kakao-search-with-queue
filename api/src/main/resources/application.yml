@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active:
+    include:
+      - common
+      - domain
+      - external-client
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  port: 8080
+
+# gateway Url
+api:
+  root-uri: http://localhost:8080
+  create-search-uri-path: /v1/searches
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local, test, beta, prod
+logging:
+  level:
+    org.hibernate.type.descriptor.sql: trace
+    org.springframework.web.filter: info
+com.zaxxer.hikari.HikariConfig: debug
+com.zaxxer.hikari: trace
+

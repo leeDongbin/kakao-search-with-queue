@@ -1,0 +1,5 @@
+rootProject.name = 'search'
+include 'api'
+include 'domain'
+include 'external-client'
+include 'common'

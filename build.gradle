@@ -1,0 +1,39 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.5.8'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	springfoxSwaggerVer = '2.9.1'
+}
+
+subprojects {
+	group 'biz.kakao.search'
+	version '1.0.0'
+
+	apply plugin: 'java'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	def javaVer = '11'
+	targetCompatibility = javaVer
+	sourceCompatibility = javaVer
+	compileJava.options.encoding = "UTF-8"
+
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		annotationProcessor("org.projectlombok:lombok:1.18.8")
+		testAnnotationProcessor("org.projectlombok:lombok:1.18.8")
+	}
+
+}
+
+
